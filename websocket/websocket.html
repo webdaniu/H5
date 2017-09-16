@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>websoket</title>
+</head>
+<body>
+<script>
+    //web Sockets的优点：双向通信，单独的协议（ws://和wss://）,传输数据少。
+    //webSockets的缺点：
+    //建立websocket
+    var socket = new WebSocket('ws://www.baidu.com');
+    //关闭websocket
+    socket.close()
+
+    //发送数据
+    socket.send('hello')
+    //接收数据
+    socket.onmessage = function (event) {
+        var data = event.data
+    }
+
+    //websocket 的三个接口
+    //1.onopen 在连接成功时触发
+    //2.onerroe 在发生错误时触发
+    //3.onclose 在连接关闭时触发
+    socket.onopen = function () {
+
+    }
+    socket.onerror = function () {
+
+    }
+    socket.onclose = function (event) {
+
+    }
+    //只有onclose的event对象有额外信息
+    //1.wasClean (布尔值):表死是否明确关闭
+    //2.code:服务器返回的数值状态玛
+    //3.reason:包含服务器返回的信息
+
+
+</script>
+</body>
+</html>
